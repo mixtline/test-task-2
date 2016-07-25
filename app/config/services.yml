@@ -1,0 +1,6 @@
+services:
+     app.dynamicRouter.listener:
+        class: AppBundle\EventListener\DynamicRouterListener
+        arguments: ["@kernel", "@router", "@request_stack"]
+        tags:
+            - { name: kernel.event_listener, event: kernel.request, priority: 33 }
